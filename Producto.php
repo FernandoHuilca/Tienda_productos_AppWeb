@@ -34,7 +34,7 @@ foreach($_productos as $producto){
     <br>
     <a href="">Carrito de Compra</a>
     <br>
-    <a href="index.php">Cerrar sesion</a>
+    <a href="cerrarsesion.php">Cerrar sesion</a>
     <br><br>
     <fieldset>
         <h1>Producto: <?php echo $productoSeleccionado['nombre']; ?></h1>

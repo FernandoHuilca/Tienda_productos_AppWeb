@@ -3,7 +3,7 @@
 session_start();
 
 #Imprimo para ver si todo correcto todo bien:
-echo "<pre>" . print_r($_POST , true) . "</pre>";
+#echo "<pre>" . print_r($_POST , true) . "</pre>";
 
 #declaro mis variables simulando una BD
 $usuario = "Fernando";
