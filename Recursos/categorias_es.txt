@@ -1,14 +1,14 @@
-Pantalones,
-Camisas,
-Camisetas,
-Chandals,
-Mallas,
-Polos,
-Sudaderas,
-Chaquetas,
-Forros polares,
-Chalecos,
-Abrigos,
-Jerseys,
-Corbatas,
-Zapatos
+1,Pantalones,Comodidad y estilo en cada paso. Ideales para cualquier ocasión.,25.50
+2,Camisas,Perfectas para oficina o eventos, con telas suaves y transpirables.,30.00
+3,Camisetas,Prendas básicas con diseños modernos para tu día a día.,15.75
+4,Chandals,Conjunto deportivo ligero y resistente, ideal para entrenar o descansar.,45.99
+5,Mallas,Flexibles y cómodas, perfectas para actividades deportivas.,20.00
+6,Polos,Clásicos y elegantes, combinan perfectamente con cualquier look casual.,22.50
+7,Sudaderas,Suaves y abrigadas para los días fríos, con capucha ajustable.,35.25
+8,Chaquetas,Protección y estilo con materiales duraderos y resistentes al viento.,55.00
+9,Forros polares,Te mantienen cálido sin perder ligereza, ideales para aventuras al aire libre.,40.00
+10,Chalecos,Versátiles y ligeros, perfectos para combinar con cualquier prenda.,28.90
+11,Abrigos,Diseño elegante que ofrece máxima protección contra el frío.,70.00
+12,Jerseys,Confeccionados con lana de calidad, aportan calidez y estilo.,38.50
+13,Corbatas,Detalles que marcan la diferencia, ideales para un look formal.,18.00
+14,Zapatos,Comodidad y durabilidad para acompañarte en cada paso.,60.75

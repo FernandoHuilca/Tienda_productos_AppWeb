@@ -26,7 +26,7 @@ $_productos = file($path);
         <?php
         foreach($_productos as $producto){
             $datos = explode(",", $producto);
-            echo '<p><a href="#">'.htmlspecialchars($datos[0]).'</a></p>';
+            echo '<p><a href="producto.php?id='.intval($datos[0]).'">'.htmlspecialchars($datos[1]).'</a></p>';
 
 
             // Revisar orden de elementos id del producto, nombre, descripcion, precio
