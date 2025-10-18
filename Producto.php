@@ -28,8 +28,8 @@ foreach($_productos as $producto){
 </head>
 
 <body>
-    <!-- <h2>Bienvenido Usuario: <?php //echo $_SESSION['usuario']  ?> </h2> -->    
-    <h2>Bienvenido Usuario: nombre_de_usuario </h2>
+     <h2>Bienvenido Usuario: <?php echo $_SESSION['usuario']  ?> </h2>     
+    <!--<h2>Bienvenido Usuario: nombre_de_usuario </h2> -->
     <a href="panelprincipal.php">Panel Principal</a>
     <br>
     <a href="">Carrito de Compra</a>

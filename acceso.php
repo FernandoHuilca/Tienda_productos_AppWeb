@@ -1,4 +1,7 @@
 <?php
+#Levanto la sesino 
+session_start();
+
 #Imprimo para ver si todo correcto todo bien:
 echo "<pre>" . print_r($_POST , true) . "</pre>";
 
@@ -17,7 +20,7 @@ $f_recordarme = isset($_POST["recordarme"]);
 if($usuario == $f_usuario && $clave == $f_clave){
 
     #Si el usuario tiene acceso le creo una sesion
-
+    $_SESSION["usuario"] = $f_usuario; 
 
     #si el usuario quiere que le recuerden le doy una galletita 
     if($f_recordarme){
@@ -34,7 +37,6 @@ if($usuario == $f_usuario && $clave == $f_clave){
 
         }
     }
-
 
 
     #si quiere o no ser recordado igual le mando al panel principal porque si tiene acceso 

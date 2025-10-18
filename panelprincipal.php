@@ -11,8 +11,8 @@ $_productos = file($path);
     <head></head> 
     <body>
         <h1>PANEL PRINCIPAL</h1>
-        <!-- <h2>Bienvenido Usuario: <?php //echo $_SESSION['usuario']  ?> </h2> -->
-        <h2>Bienvenido Usuario: nombre_de_usuario </h2>
+         <h2>Bienvenido Usuario: <?php echo $_SESSION['usuario']  ?></h2> 
+        <!--<h2>Bienvenido Usuario: nombre_de_usuario </h2>-->
         <br>
         <a href="configuraridioma.php?lang=es">ES (Español) </a>
          | 
