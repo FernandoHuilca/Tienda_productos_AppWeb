@@ -19,7 +19,7 @@ $_productos = file($path);
         <a href="configuraridioma.php?lang=en">EN (English) </a>
         <br>
         <br>
-        <a href=""> Cerrar Sesion </a>
+        <a href="index.php"> Cerrar Sesion </a>
 
         <h3><?php echo $title ?></h3>
 
