@@ -1,7 +1,7 @@
 <?php
 session_start(); // SIEMPRE session_start()
-if(!isset($_SESSION["usuario"] && !isset["clave"])){
-    header("Location:index.php");
+if(!isset($_SESSION["usuario"]) && !isset($_SESSION["clave"])){
+    header("Location: index.php");
 }
 
 $lang = isset($_COOKIE['lang']) ?  $_COOKIE['lang']  : 'es';
