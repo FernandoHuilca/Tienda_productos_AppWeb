@@ -12,6 +12,7 @@ $path = 'Recursos/categorias_' . $lang . '.txt';
 $_productos = file($path);
 $idProductoABuscar = intval($_GET['id']);
 
+// Buscar el producto en la lista de productos
 foreach($_productos as $producto){
     $datosDelProducto = explode(",", $producto);
     if (intval($datosDelProducto[0]) == $idProductoABuscar) {
@@ -70,6 +71,7 @@ if(isset($_SESSION["carrito"])){
         <!-- formulario para agregar al carrito. Si quieres que un botón haga que la sesión 
         guarde algo, debe estar entre etiqueta form, ser una etiqueta input, del tipo submit -->
         <form action="registrocarritocompras.php" method="post">
+            <!-- Se envía el ID del producto a agregar al carrito -->
             <input type="hidden" name="idProducto" value="<?php echo $productoSeleccionado['id']; ?>">
             <input type="submit" name="submitCarrito" value="Agregar al Carrito" >
         </form>        
