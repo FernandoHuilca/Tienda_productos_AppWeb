@@ -23,6 +23,14 @@ foreach($_productos as $producto){
     }
 }
 
+$indice = null;
+foreach($_SESSION["carrito"] as $i => $item){
+    if($item['id'] == $productoSeleccionado['id']){
+        $indice = $i;
+        break;
+    }
+}
+
 // Si se envió el formulario para agregar al carrito, lo que hacemos es agregar el producto a la sesión
 // a través de un array llamado "carrito" (Le damos un nombre para saber cómo acceder a él después). 
 // Nota: Para AGREGAR elementos usamos array[] = valor. Pero, la forma de acceder a los elementos
@@ -32,28 +40,21 @@ if(isset($_POST["submitCarrito"])){
         $_SESSION["carrito"] = [];
     }
 
-    $indice = null;
-    foreach($_SESSION["carrito"] as $i => $item){
-        if($item['id'] == $productoSeleccionado['id']){
-            $indice = $i;
-            break;
-        }
-    }
-
     if($indice !== null) {
         $_SESSION["carrito"][$indice]["cantidad"] += 1;
     }else{
-        $nuevoProducto = $productoSeleccionado;
+        $nuevoProducto = $productoSeleccionado["id"];
         $nuevoProducto["cantidad"] = 1; 
         $_SESSION["carrito"][] = $nuevoProducto;
     }
 
     #echo "Carrito: " . print_r($_SESSION["carrito"], true) . "<br>";
+
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -78,6 +79,9 @@ if(isset($_POST["submitCarrito"])){
         <b>Descripcion: </b><?php echo $productoSeleccionado['descripcion']; ?>
         <br>
         <b>Precio: </b><?php echo $productoSeleccionado['precio']; ?>
+        <br>
+        <br>
+        <b>Cantidad Seleccionada: <?php echo $_SESSION["carrito"][$indice]["cantidad"] ?> </b> 
         <br><br>
         <!-- formulario para agregar al carrito. Si quieres que un botón haga que la sesión 
         guarde algo, debe estar entre etiqueta form, ser una etiqueta input, del tipo submit -->
