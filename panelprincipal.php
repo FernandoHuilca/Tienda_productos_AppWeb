@@ -1,5 +1,10 @@
 <?php
 session_start();
+if(!isset($_SESSION["usuario"]) && !isset($_SESSION["clave"])){
+    header("Location: index.php");
+}
+
+
 $lang = isset($_COOKIE['lang']) ?  $_COOKIE['lang']  : 'es';
 $title = $lang == 'es' ? 'Lista de Productos' : 'Product List';  
 $path = 'Recursos/categorias_' . $lang . '.txt';
@@ -27,14 +32,8 @@ $_SESSION['productos'] = $_productos; // Guardar los productos según la prefere
         <?php
         foreach($_productos as $producto){
             $datos = explode(",", $producto);
-            echo '<p><a href="producto.php?id='.intval($datos[0]).'">'.htmlspecialchars($datos[1]).'</a></p>';
-
-
-            // Revisar orden de elementos id del producto, nombre, descripcion, precio
-            //if (count($datos) >= 2) {
-            //  $id = trim($datos[0]);       
-            //  $nombre = trim($datos[1]);   
-            //  echo '<p><a href="producto.php?id=' . intval($id) . '">' . htmlspecialchars($nombre) . '</a></p>';
+            echo '<p><a href="producto.php?id='. $datos[0] .'">'. $datos[1] .'</a></p>';
+ 
         }
         ?>
     </body>

@@ -48,8 +48,20 @@ if (isset($_COOKIE["c_recordarme"]) && $_COOKIE["c_recordarme"] ){ # Si hay una 
 
 
         </form>
+        
     </fieldset>
 
+
+    <br><br>  
+    <fieldset> <legend> Credenciales </legend>
+
+    <div> 
+        <p> El usuario es: "Carlitos" </p>
+        <p> La clave es: "123"</p>
+
+    </div>
+    
+    </fieldset>
 
 
     </body>
