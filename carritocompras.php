@@ -39,7 +39,6 @@ $_productos = file($path);
                         }
                     }   
                 }
-
                 
                 echo("TOTAL: $" . $total . "<br>");
                 //array_splice($_SESSION["carrito"],0);
