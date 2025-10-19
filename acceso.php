@@ -6,7 +6,7 @@ session_start();
 #echo "<pre>" . print_r($_POST , true) . "</pre>";
 
 #declaro mis variables simulando una BD
-$usuario = "Fernando";
+$usuario = "Carlitos";
 $clave = "123";
 
 
