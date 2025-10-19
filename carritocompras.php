@@ -25,7 +25,7 @@ $pathImagenes = 'Recursos/Imagenes/'; // Ruta de las imágenes
     <title>Document</title>
 </head>
 <body>
-    <h1>Carrito de Compras</h1>
+    <h1>CARRITO DE COMPRA</h1>
     <h2>Bienvenido Usuario: <?php echo $_SESSION["usuario"] ?> </h2>
     
     <br> <a href="panelprincipal.php">Panel principal</a> <br>
