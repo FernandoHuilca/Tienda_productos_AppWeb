@@ -1,15 +1,19 @@
 <?php
 session_start(); // SIEMPRE session_start()
+
+// Control de acceso
 if(!isset($_SESSION["usuario"]) && !isset($_SESSION["clave"])){
     header("Location: index.php");
 }
 
+// Cargar el producto seleccionado según el id pasado por GET
 $lang = isset($_COOKIE['lang']) ?  $_COOKIE['lang']  : 'es';
 $path = 'Recursos/categorias_' . $lang . '.txt';
 $pathImagenes = 'Recursos/Imagenes/';
 $_productos = file($path);
 $idProductoABuscar = intval($_GET['id']);
 
+// Buscar el producto en la lista de productos
 foreach($_productos as $producto){
     $datosDelProducto = explode(",", $producto);
     if (intval($datosDelProducto[0]) == $idProductoABuscar) {
@@ -23,34 +27,17 @@ foreach($_productos as $producto){
     }
 }
 
-$indice = null;
-foreach($_SESSION["carrito"] as $i => $item){
-    if($item['id'] == $productoSeleccionado['id']){
-        $indice = $i;
-        break;
+// Buscar si el producto ya está en el carrito para mostrar la cantidad seleccionada
+$cantidadEnCarrito = 0;
+if(isset($_SESSION["carrito"])){
+    foreach($_SESSION["carrito"] as $item){
+        if($item['id'] == $productoSeleccionado['id']){
+            $cantidadEnCarrito = $item['cantidad'];
+            break;
+        }
     }
 }
 
-// Si se envió el formulario para agregar al carrito, lo que hacemos es agregar el producto a la sesión
-// a través de un array llamado "carrito" (Le damos un nombre para saber cómo acceder a él después). 
-// Nota: Para AGREGAR elementos usamos array[] = valor. Pero, la forma de acceder a los elementos
-// del carrito es a través de $_SESSION["carrito"][índice].
-if(isset($_POST["submitCarrito"])){
-    if(!isset($_SESSION["carrito"])){
-        $_SESSION["carrito"] = [];
-    }
-
-    if($indice !== null) {
-        $_SESSION["carrito"][$indice]["cantidad"] += 1;
-    }else{
-        $nuevoProducto = $productoSeleccionado["id"];
-        $nuevoProducto["cantidad"] = 1; 
-        $_SESSION["carrito"][] = $nuevoProducto;
-    }
-
-    #echo "Carrito: " . print_r($_SESSION["carrito"], true) . "<br>";
-
-}
 ?>
 
 <!DOCTYPE html>
@@ -64,9 +51,9 @@ if(isset($_POST["submitCarrito"])){
 <body>
      <h2>Bienvenido Usuario: <?php echo $_SESSION['usuario']  ?> </h2>     
     <!--<h2>Bienvenido Usuario: nombre_de_usuario </h2> -->
-    <a href="panelprincipal.php">Panel Principal</a>
+    <a href="panelprincipal.php">Panel Principal</a> <br>
     <br>
-    <a href="carritocompras.php">Carrito de compra</a>
+    <a href="carritocompras.php">Carrito de compra</a> <br>
     <br>
     <a href="cerrarsesion.php">Cerrar sesión</a>
     <br><br>
@@ -81,13 +68,17 @@ if(isset($_POST["submitCarrito"])){
         <b>Precio: </b><?php echo $productoSeleccionado['precio']; ?>
         <br>
         <br>
-        <b>Cantidad Seleccionada: <?php echo $_SESSION["carrito"][$indice]["cantidad"] ?> </b> 
+        <b>Cantidad Seleccionada: <?php echo $cantidadEnCarrito; ?> </b> 
         <br><br>
+        
         <!-- formulario para agregar al carrito. Si quieres que un botón haga que la sesión 
         guarde algo, debe estar entre etiqueta form, ser una etiqueta input, del tipo submit -->
-        <form method="post">
+        <form action="registrocarritocompras.php" method="post">
+            <!-- Se envía el ID del producto a agregar al carrito -->
+            <input type="hidden" name="idProducto" value="<?php echo $productoSeleccionado['id']; ?>">
             <input type="submit" name="submitCarrito" value="Agregar al Carrito" >
         </form>        
+
         <br><br>
     </fieldset>
 </body>
