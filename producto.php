@@ -72,7 +72,7 @@ if(isset($_POST["submitCarrito"])){
     <br><br>
     <fieldset>
         <h1>Producto: <?php echo $productoSeleccionado['nombre']; ?></h1>
-        <img src = "<?php echo $pathImagenes . $productoSeleccionado['id']; ?>.jpg"  height = 200 width = 200  >
+        <img src = "<?php echo $pathImagenes . $productoSeleccionado['id']; ?>.jpg" alt = "No eres tu, soy yo :(" height = 200 width = 200  >
         <br>
         <b>ID: </b><?php echo $productoSeleccionado['id']; ?>
         <br>
