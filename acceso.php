@@ -29,13 +29,12 @@ if($usuario == $f_usuario && $clave == $f_clave){
         setcookie("c_clave", $f_clave, 0);
         setcookie("c_recordarme", $f_recordarme, 0);# en el doc se especifica que solo el usuario y clave deben volverse a llenar  
     }else{
-        //borrar las cookies existentes: 
-        if(isset($_COOKIE)){
-            foreach($_COOKIE as $name => $value){
-                setcookie($name, "", 1);
-            }
-
-        }
+         // Borrado consistente (mismo path)
+        setcookie('c_usuario', '', time()-3600, $path);
+        setcookie('c_recordarme', '', time()-3600, $path);
+        setcookie('c_clave', '', time()-3600, $path);
+        
+        
     }
 
 

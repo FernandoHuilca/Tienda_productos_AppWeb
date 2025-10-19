@@ -9,6 +9,7 @@ if(!isset($_SESSION["usuario"]) && !isset($_SESSION["clave"])){
 // Cargar el producto seleccionado según el id pasado por GET
 $lang = isset($_COOKIE['lang']) ?  $_COOKIE['lang']  : 'es';
 $path = 'Recursos/categorias_' . $lang . '.txt';
+$pathImagenes = 'Recursos/Imagenes/';
 $_productos = file($path);
 $idProductoABuscar = intval($_GET['id']);
 
@@ -52,12 +53,14 @@ if(isset($_SESSION["carrito"])){
     <!--<h2>Bienvenido Usuario: nombre_de_usuario </h2> -->
     <a href="panelprincipal.php">Panel Principal</a>
     <br>
-    <a href="carritocompras.php">Carrito de Compra</a>
+    <a href="carritocompras.php">Carrito de compra</a>
     <br>
-    <a href="cerrarsesion.php">Cerrar sesion</a>
+    <a href="cerrarsesion.php">Cerrar sesión</a>
     <br><br>
     <fieldset>
         <h1>Producto: <?php echo $productoSeleccionado['nombre']; ?></h1>
+        <img src = "<?php echo $pathImagenes . $productoSeleccionado['id']; ?>.jpg" alt = "No eres tu, soy yo :(" height = 200 width = 200  >
+        <br>
         <b>ID: </b><?php echo $productoSeleccionado['id']; ?>
         <br>
         <b>Descripcion: </b><?php echo $productoSeleccionado['descripcion']; ?>
