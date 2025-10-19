@@ -4,6 +4,7 @@ $lang = isset($_COOKIE['lang']) ?  $_COOKIE['lang']  : 'es';
 $title = $lang == 'es' ? 'Lista de Productos' : 'Product List';  
 $path = 'Recursos/categorias_' . $lang . '.txt';
 $_productos = file($path);
+$_SESSION['productos'] = $_productos; // Guardar los productos según la preferencia del idioma en una sesión
 ?>
 
 
