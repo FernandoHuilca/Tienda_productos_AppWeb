@@ -25,8 +25,9 @@ $_productos = file($path);
         <br>
         <br>
         <a href="carritocompras.php">Carrito de compra</a> <br>
+        <br>
         <a href="cerrarsesion.php"> Cerrar Sesion </a>
-
+        <br><br>
 
         <h3><?php echo $title ?></h3>
 
