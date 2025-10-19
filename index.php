@@ -21,7 +21,7 @@ if (isset($_COOKIE["c_recordarme"]) && $_COOKIE["c_recordarme"] ){ # Si hay una 
 </head>
     <body>
     <!--Titulo de la pagina -->
-    <h1> Tienda de productos!! </h1>
+    <h1> Tienda de productos. </h1>
 
     <fieldset> 
         <legend>LOGIN</legend>

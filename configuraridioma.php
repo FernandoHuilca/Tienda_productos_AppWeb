@@ -1,6 +1,6 @@
 <?php
     if (isset($_GET['lang'])){
-        setcookie('lang', $_GET['lang'], time() + (86400 * 30), "/"); // 86400 = 1 day
+        setcookie('lang', $_GET['lang'],0); 
     } 
     header("Location: panelprincipal.php");
 

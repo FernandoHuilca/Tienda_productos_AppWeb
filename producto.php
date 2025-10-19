@@ -6,6 +6,7 @@ if(!isset($_SESSION["usuario"]) && !isset($_SESSION["clave"])){
 
 $lang = isset($_COOKIE['lang']) ?  $_COOKIE['lang']  : 'es';
 $path = 'Recursos/categorias_' . $lang . '.txt';
+$pathImagenes = 'Recursos/Imagenes/';
 $_productos = file($path);
 $idProductoABuscar = intval($_GET['id']);
 
@@ -47,7 +48,7 @@ if(isset($_POST["submitCarrito"])){
         $_SESSION["carrito"][] = $nuevoProducto;
     }
 
-    echo "Carrito: " . print_r($_SESSION["carrito"], true) . "<br>";
+    #echo "Carrito: " . print_r($_SESSION["carrito"], true) . "<br>";
 }
 ?>
 
@@ -64,12 +65,14 @@ if(isset($_POST["submitCarrito"])){
     <!--<h2>Bienvenido Usuario: nombre_de_usuario </h2> -->
     <a href="panelprincipal.php">Panel Principal</a>
     <br>
-    <a href="carritocompras.php">Carrito de Compra</a>
+    <a href="carritocompras.php">Carrito de compra</a>
     <br>
-    <a href="cerrarsesion.php">Cerrar sesion</a>
+    <a href="cerrarsesion.php">Cerrar sesión</a>
     <br><br>
     <fieldset>
         <h1>Producto: <?php echo $productoSeleccionado['nombre']; ?></h1>
+        <img src = "<?php echo $pathImagenes . $productoSeleccionado['id']; ?>.jpg"  height = 200 width = 200  >
+        <br>
         <b>ID: </b><?php echo $productoSeleccionado['id']; ?>
         <br>
         <b>Descripcion: </b><?php echo $productoSeleccionado['descripcion']; ?>
