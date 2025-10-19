@@ -1,14 +1,14 @@
 1,Pants,Comfort and style in every step. Perfect for any occasion.,25.50
-2,Shirts,Ideal for work or events, made with soft and breathable fabrics.,30.00
+2,Shirts,Ideal for work or events made with soft and breathable fabrics.,30.00
 3,Tshirts,Basic garments with modern designs for everyday wear.,15.75
-4,Tracksuits,Light and resistant sportswear, great for training or relaxing.,45.99
-5,Tights,Flexible and comfortable, perfect for workouts or yoga.,20.00
-6,Poles,Classic and elegant look, perfect for casual combinations.,22.50
+4,Tracksuits,Light and resistant sportswear great for training or relaxing.,45.99
+5,Tights,Flexible and comfortable perfect for workouts or yoga.,20.00
+6,Poles,Classic and elegant look perfect for casual combinations.,22.50
 7,Sweatshirts,Soft and warm with adjustable hood for colder days.,35.25
 8,Jackets,Protection and style with wind-resistant materials.,55.00
-9,Fleece linings,Keeps you warm without extra weight, ideal for outdoor adventures.,40.00
-10,Vests,Versatile and light, perfect to combine with any outfit.,28.90
+9,Fleece linings,Keeps you warm without extra weight ideal for outdoor adventures.,40.00
+10,Vests,Versatile and light perfect to combine with any outfit.,28.90
 11,Coats,Elegant design offering maximum protection against the cold.,70.00
-12,Sweaters,Made with quality wool, providing warmth and style.,38.50
+12,Sweaters,Made with quality wool providing warmth and style.,38.50
 13,Ties,The perfect touch for a formal and sophisticated look.,18.00
 14,Shoes,Comfort and durability to accompany you every step.,60.75
