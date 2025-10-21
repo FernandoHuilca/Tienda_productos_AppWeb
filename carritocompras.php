@@ -3,7 +3,7 @@
 session_start(); // SIEMPRE session_start() al manejar sesiones
 
 // Control de acceso
-if(!isset($_SESSION["usuario"]) && !isset($_SESSION["clave"])){
+if(!isset($_SESSION["usuario"]) && !isset($_COOKIE["c_clave"])){
     header("Location: index.php");
 }
 
@@ -46,7 +46,7 @@ $pathImagenes = 'Recursos/Imagenes/'; // Ruta de las imágenes
                             echo '<img src = "' . $pathImagenes . $datosDelProducto[0] . '.jpg" alt = "No eres tu, soy yo :(" height = 200 width = 200  >' . "<br>";
                             echo "<b> ID: </b>" . $datosDelProducto[0] . "<br>";
                             echo "<b> Descripción: </b>" . $datosDelProducto[2] . "<br>";
-                            echo "<b> Precio: </b>" . $datosDelProducto[3] . "<br>";
+                            echo "<b> Precio: </b>" . "$" . $datosDelProducto[3] . "<br>";
                             echo "<b> Cantidad: </b>" . $productoCarrito["cantidad"] . "<br>";
                             echo "</fieldset><br>   ";
                             $total = $total + ( (float)$datosDelProducto[3] * (float)$productoCarrito["cantidad"]);

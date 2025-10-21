@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION["usuario"]) && !isset($_SESSION["clave"])){
+if(!isset($_SESSION["usuario"]) && !isset($_COOKIE["c_clave"])){
     header("Location: index.php");
 }
 
@@ -26,7 +26,7 @@ $_productos = file($path);
         <br>
         <a href="carritocompras.php">Carrito de compra</a> <br>
         <br>
-        <a href="cerrarsesion.php"> Cerrar Sesión </a>
+        <a href="cerrarsesion.php">Cerrar sesión</a>
         <br><br>
 
         <h3><?php echo $title ?></h3>

@@ -2,7 +2,7 @@
 session_start(); // SIEMPRE session_start()
 
 // Control de acceso
-if(!isset($_SESSION["usuario"]) && !isset($_SESSION["clave"])){
+if(!isset($_SESSION["usuario"]) && !isset($_COOKIE["c_clave"])){
     header("Location: index.php");
 }
 
@@ -51,7 +51,7 @@ if(isset($_SESSION["carrito"])){
 <body>
      <h2>Bienvenido Usuario: <?php echo $_SESSION['usuario']  ?> </h2>     
     <!--<h2>Bienvenido Usuario: nombre_de_usuario </h2> -->
-    <a href="panelprincipal.php">Panel Principal</a> <br>
+    <a href="panelprincipal.php">Panel principal</a> <br>
     <br>
     <a href="carritocompras.php">Carrito de compra</a> <br>
     <br>
@@ -65,7 +65,7 @@ if(isset($_SESSION["carrito"])){
         <br>
         <b>Descripcion: </b><?php echo $productoSeleccionado['descripcion']; ?>
         <br>
-        <b>Precio: </b><?php echo $productoSeleccionado['precio']; ?>
+        <b>Precio: </b><?php echo "$" . $productoSeleccionado['precio']; ?>
         <br>
         <br>
         <b>Cantidad Seleccionada: <?php echo $cantidadEnCarrito; ?> </b> 
